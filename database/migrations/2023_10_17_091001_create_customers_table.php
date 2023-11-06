@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->foreignIdFor(\App\Models\LeadSource::class)->nullable()->constrained();
             $table->foreignIdFor(\App\Models\PipelineStage::class)->nullable()->constrained();
+            $table->foreignIdFor(\App\Models\User::class, 'employee_id')->nullable()->constrained('users');
             $table->timestamps();
             $table->softDeletes();
         });

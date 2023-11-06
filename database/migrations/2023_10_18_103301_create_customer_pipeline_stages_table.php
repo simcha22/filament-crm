@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Customer::class)->constrained();
             $table->foreignIdFor(\App\Models\PipelineStage::class)->nullable()->constrained();
             $table->foreignIdFor(\App\Models\User::class)->nullable()->constrained();
+            $table->foreignIdFor(\App\Models\User::class, 'employee_id')->nullable()->constrained('users');
             $table->text('notes')->nullable();
             $table->timestamps();
         });
